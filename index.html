@@ -43,7 +43,7 @@
 	<script>
 		const ggr = async () => {
 			// #以降の文字列を取得
-			const hash = location.hash.substring(1).replace(/&/g, "%26");
+			const hash = location.hash.substring(1).replace(/&/g, "%26").replace(/#/, "%23");
 			if (!hash) {
 				console.log("hash is empty");
 				document.getElementById("tips").style.display = "unset";
