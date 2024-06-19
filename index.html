@@ -3,9 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- <meta property="og:title" content="GooglingGo! Japan"> -->
-	<meta property="og:description" content="自分で調べることはとても重要です。人に聞く前に一度検索してみやがれください。">
 	<meta property="og:type" content="website">
+	<meta property="og:description" content="自分で調べることはとても重要です。人に聞く前に一度検索してみやがれください。">
 	<title>GooglingGo!Japan</title>
 	<style>
 		/* スマートフォン用のスタイル */
@@ -29,6 +28,7 @@
 </head>
 <body onload="ggr();">
 	<h1>GooglingGo! Japan</h1>
+	<h2 id="search_for" style="display: none;"></h2>
 	<p>お好みの検索エンジンを選んでください</p>
 	<ul>
 		<li><a class="move" href="https://www.google.co.jp/" target="_blank">Google</a></li>
@@ -49,13 +49,15 @@
 				document.getElementById("tips").style.display = "unset";
 				return;
 			}
-			console.log("hash is " + hash);
 			const urls = {
 				"https://www.google.co.jp/": "search?q=" + hash,
 				"https://www.bing.com/": "search?q=" + hash,
 				"https://duckduckgo.com/": "?q=" + hash,
 				"https://search.yahoo.com/": "search?p=" + hash,
 			};
+			const search_for = document.body.getElementById("search_for");
+			search_for.innerHTML = location.hash.substring(1).replace("+", " ");
+			search_for.style.display = "unset";
 			Array.from(document.body.querySelectorAll("a.move")).forEach((element) => {
 				const href = element.attributes.getNamedItem("href");
 				href.value = href.value + urls[href.value];
