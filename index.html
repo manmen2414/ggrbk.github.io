@@ -55,7 +55,7 @@
 				"https://duckduckgo.com/": "?q=" + hash,
 				"https://search.yahoo.com/": "search?p=" + hash,
 			};
-			const search_for = document.body.getElementById("search_for");
+			const search_for = document.getElementById("search_for");
 			search_for.innerHTML = location.hash.substring(1).replace("+", " ");
 			search_for.style.display = "unset";
 			Array.from(document.body.querySelectorAll("a.move")).forEach((element) => {
