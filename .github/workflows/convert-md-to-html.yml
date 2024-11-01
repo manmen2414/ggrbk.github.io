@@ -41,7 +41,7 @@ jobs:
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git diff --quiet && exit 0
+        test -z "$(git status --porcelain)" && exit 0
         git add faq/*.html
         git add *.html
         git commit -m 'Convert Markdown to HTML and Generate HTML from YAML'
