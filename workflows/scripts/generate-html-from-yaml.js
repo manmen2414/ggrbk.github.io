@@ -51,7 +51,13 @@ const familyTemplate = `\
 </html>
 `;
 
-let listItems = '';
+let listItems = `
+      <li>
+        <a href="index.html">index.html</a>
+        <ul><li>自分で調べることはとても重要です。人に聞く前に一度検索してみやがれください。</li></ul>
+      </li>
+`;
+
 Object.entries(familyData).forEach(([key, value]) => {
   listItems += `
       <li>
