@@ -5,9 +5,11 @@ on:
   push:
     paths:
       - 'family.yaml'
+      - 'workflows/scripts/generate-html-from-yaml.js'
   pull_request:
     paths:
       - 'family.yaml'
+      - 'workflows/scripts/generate-html-from-yaml.js'
 
 permissions:
   contents: write

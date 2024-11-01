@@ -5,9 +5,13 @@ on:
   push:
     paths:
       - 'faq/**/*.md'
+      - 'faq/.template.html'
+      - 'workflows/scripts/convert-md-to-html.js'
   pull_request:
     paths:
       - 'faq/**/*.md'
+      - 'faq/.template.html'
+      - 'workflows/scripts/convert-md-to-html.js'
 
 permissions:
   contents: write
