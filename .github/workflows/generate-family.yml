@@ -6,10 +6,12 @@ on:
     paths:
       - 'family.yaml'
       - 'workflows/scripts/generate-html-from-yaml.js'
+      - 'family.html'
   pull_request:
     paths:
       - 'family.yaml'
       - 'workflows/scripts/generate-html-from-yaml.js'
+      - 'family.html'
 
 permissions:
   contents: write
