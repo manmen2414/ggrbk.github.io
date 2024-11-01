@@ -49,7 +49,9 @@ files.forEach(file => {
     const finalHtml = template
       .replace('<h2>テンプレート</h2>\n', '')
       .replace('<meta property="og:description" content="テンプレート">', `<meta property="og:description" content="${meta.description}">`)
-      .replace(/<ul>[\n ]+<\/ul>/, `\n${formattedHtmlContent}`);
+      .replace(/<ul>[\n ]+<\/ul>/, `\n${formattedHtmlContent}`)
+      .replaceAll(/^ +/gm, '')
+      .replaceAll('\n', '');
     const htmlFilePath = path.join(faqDir, file.replace('.md', '.html'));
     fs.writeFileSync(htmlFilePath, finalHtml);
 
@@ -73,5 +75,7 @@ listHtml += `
 </body>
 </html>
 `;
+listHtml = listHtml.replaceAll(/^ +/gm, '').replaceAll('\n', '');
 
 fs.writeFileSync(path.join(faqDir, 'list.html'), listHtml);
+console.log('Generated faq/list.html');

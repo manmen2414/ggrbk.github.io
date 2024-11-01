@@ -19,7 +19,10 @@ const familyYaml = fs.readFileSync('family.yaml', 'utf8');
 const familyData = yaml.load(familyYaml);
 
 Object.entries(familyData).forEach(([key, value]) => {
-  const htmlContent = template.replace('DESCRIPTION_PLACEHOLDER', value);
+  const htmlContent = template
+    .replace('DESCRIPTION_PLACEHOLDER', value)
+    .replaceAll(/^ +/gm, '')
+    .replaceAll('\n', '');
   fs.writeFileSync(`${key}.html`, htmlContent);
   console.log(`Generated ${key}.html with description: ${value}`);
 });
@@ -67,6 +70,9 @@ Object.entries(familyData).forEach(([key, value]) => {
   `;
 });
 
-const familyHtmlContent = familyTemplate.replace('LIST_ITEMS_PLACEHOLDER', listItems);
+const familyHtmlContent = familyTemplate
+  .replace('LIST_ITEMS_PLACEHOLDER', listItems)
+  .replaceAll(/^ +/gm, '')
+  .replaceAll('\n', '');
 fs.writeFileSync('family.html', familyHtmlContent);
 console.log('Generated family.html');
