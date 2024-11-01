@@ -6,12 +6,14 @@ on:
     paths:
       - 'faq/**/*.md'
       - 'faq/.template.html'
-      - 'workflows/scripts/convert-md-to-html.js'
+      - 'workflows/scripts/gen-faq.js'
+      - '.github/workflows/generate-faq.yml'
   pull_request:
     paths:
       - 'faq/**/*.md'
       - 'faq/.template.html'
-      - 'workflows/scripts/convert-md-to-html.js'
+      - 'workflows/scripts/gen-faq.js'
+      - '.github/workflows/generate-faq.yml'
 
 permissions:
   contents: write
@@ -33,7 +35,7 @@ jobs:
       run: npm install
 
     - name: Convert Markdown to HTML
-      run: node workflows/scripts/convert-md-to-html.js
+      run: node workflows/scripts/gen-faq.js
 
     - name: Commit and push changes
       env:

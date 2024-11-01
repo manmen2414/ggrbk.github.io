@@ -5,13 +5,15 @@ on:
   push:
     paths:
       - 'family.yaml'
-      - 'workflows/scripts/generate-html-from-yaml.js'
+      - 'workflows/scripts/gen-family.js'
       - 'family.html'
+      - '.github/workflows/generate-family.yml'
   pull_request:
     paths:
       - 'family.yaml'
-      - 'workflows/scripts/generate-html-from-yaml.js'
+      - 'workflows/scripts/gen-family.js'
       - 'family.html'
+      - '.github/workflows/generate-family.yml'
 
 permissions:
   contents: write
@@ -33,7 +35,7 @@ jobs:
       run: npm install
 
     - name: Generate HTML from YAML
-      run: node workflows/scripts/generate-html-from-yaml.js
+      run: node workflows/scripts/gen-family.js
 
     - name: Commit and push changes
       env:
