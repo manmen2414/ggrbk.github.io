@@ -11,7 +11,7 @@ const template = fs.readFileSync('faq/.template.html', 'utf8');
 const faqDir = 'faq';
 const files = fs.readdirSync(faqDir);
 
-let listHtml = `
+let listHtml = `\
 <!DOCTYPE html>
 <html lang="ja">
 <head>

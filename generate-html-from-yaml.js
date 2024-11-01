@@ -1,7 +1,7 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
 
-const template = `
+const template = `\
 <!DOCTYPE html>
 <html lang="ja">
 <head>
