@@ -1,4 +1,4 @@
-name: Convert Markdown to HTML
+name: Generate family HTML
 
 on:
   workflow_dispatch:
