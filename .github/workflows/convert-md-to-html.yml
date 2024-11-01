@@ -8,6 +8,9 @@ on:
     paths:
       - 'faq/**/*.md'
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -28,6 +31,8 @@ jobs:
       run: node convert-md-to-html.js
 
     - name: Commit and push changes
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
