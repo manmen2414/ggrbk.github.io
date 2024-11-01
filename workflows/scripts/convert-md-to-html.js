@@ -20,8 +20,8 @@ let listHtml = `\
   <meta property="og:type" content="website">
   <meta property="og:description" content="GGRBK FAQ List">
   <title>GGRBK FAQ</title>
-  <link rel="stylesheet" href="/style.css">
-  <script src="/script.js" defer></script>
+  <link rel="stylesheet" href="/styles/style.css">
+  <script src="/scripts/add-button.js" defer></script>
 </head>
 <body>
   <h1>GGRBK FAQ List</h1>
