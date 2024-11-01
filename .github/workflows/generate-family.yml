@@ -29,7 +29,7 @@ jobs:
       run: npm install
 
     - name: Generate HTML from YAML
-      run: node generate-html-from-yaml.js
+      run: node workflows/scripts/generate-html-from-yaml.js
 
     - name: Commit and push changes
       env:
