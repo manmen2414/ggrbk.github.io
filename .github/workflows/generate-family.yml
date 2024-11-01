@@ -4,10 +4,10 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - 'faq/**/*.md'
+      - 'family.yaml'
   pull_request:
     paths:
-      - 'faq/**/*.md'
+      - 'family.yaml'
 
 permissions:
   contents: write
@@ -28,8 +28,8 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Convert Markdown to HTML
-      run: node convert-md-to-html.js
+    - name: Generate HTML from YAML
+      run: node generate-html-from-yaml.js
 
     - name: Commit and push changes
       env:
@@ -39,5 +39,5 @@ jobs:
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git add faq/*.html
         git add *.html
-        git commit -m 'Convert Markdown to HTML and Generate HTML from YAML'
+        git commit -m 'Generate HTML from YAML'
         git push
