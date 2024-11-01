@@ -40,4 +40,5 @@ jobs:
         git add faq/*.html
         git add *.html
         git commit -m 'Generate HTML from YAML'
+        git pull
         git push
