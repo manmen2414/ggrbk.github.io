@@ -21,4 +21,5 @@ const familyData = yaml.load(familyYaml);
 Object.entries(familyData).forEach(([key, value]) => {
   const htmlContent = template.replace('DESCRIPTION_PLACEHOLDER', value);
   fs.writeFileSync(`${key}.html`, htmlContent);
+  console.log(`Generated ${key}.html with description: ${value}`);
 });

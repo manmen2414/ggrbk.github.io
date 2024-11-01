@@ -59,6 +59,7 @@ files.forEach(file => {
         <ul><li>${meta.description}</li></ul>
       </li>
     `;
+    console.log(`Converted ${file} to ${htmlFilePath}`);
   }
 });
 
