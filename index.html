@@ -11,16 +11,17 @@
 		@media screen and (min-width: 481px) { body { font-size: 20px; } }
 		@media screen and (min-width: 769px) { body { font-size: 24px; } }
 		h1 { font-size: 2em; }
-		button, .small { font-size: 0.75em; }
+		button, input,.small { font-size: 0.75em; }
 		a:link, a:visited { color: #0000ff; }
 	</style>
 	<script src="/scripts/ggr.js" defer></script>
+	<script src="/scripts/add-engine.js" defer></script>
 </head>
-<body onload="ggr();">
+<body onload="LoadCookie()">
 	<h1>GooglingGo! Japan</h1>
 	<h2 id="search" style="display: none;">🔍 </h2>
 	<p>お好みの検索エンジンを選んでください</p>
-	<ul>
+	<ul id="engines">
 		<li><a href="https://www.google.com/" target="_blank">Google</a></li>
 		<li><a href="https://www.bing.com/" target="_blank">Bing</a></li>
 		<li><a href="https://duckduckgo.com/" target="_blank">DuckDuckGo</a></li>
@@ -28,6 +29,17 @@
 		<li><a href="https://search.brave.com/" target="_blank">Brave</a></li>
 		<li><a href="https://www.ecosia.org/" target="_blank">Ecosia</a></li>
 	</ul>
+	<p>
+		<button id="addengine" onclick="showAddEngineForm()">検索エンジンを追加</button>
+		<button onclick="alert(JSON.stringify(getCookie()))">Cookieを確認</button>
+		<div id="addengine_form" style="display: none;">
+			<input id="addengine_name" placeholder="検索エンジン名" autocomplete="off">
+			<input id="addengine_url" onchange="showAddEngineFormURL()" placeholder="検索エンジンのURL" autocomplete="off">
+			<input id="addengine_searchurl" onchange="showAddEngineFormURL()" placeholder="検索時に挟むテキスト" autocomplete="off">
+			<div id="addengine_show"></div>
+			<button id="addengine_add" onclick="addEngine()" disabled>Add</button>
+		</div>
+	</p>
 	<p>
 		<button onclick="alert('ググれカス')">GGRKSとは</button>
 		<button onclick="alert('ググれボケ(またはバカ)')">GGRBKとは</button>

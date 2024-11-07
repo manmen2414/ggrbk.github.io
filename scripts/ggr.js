@@ -1,3 +1,11 @@
+const searchTexts = {
+    "Google": "search?q=",
+    "Bing": "search?q=",
+    "DuckDuckGo": "?q=",
+    "Yahoo": "search?p=",
+    "Brave": "search?q=",
+    "Ecosia": "search?q=",
+}
 const ggr = () => {
   const hash = location.hash.substring(1);
   const encodedHash = hash.replace(/&/g, "%26").replace(/#/, "%23");
@@ -6,14 +14,7 @@ const ggr = () => {
     return;
   }
   const urls = {};
-  Object.entries({
-    "Google": "search?q=",
-    "Bing": "search?q=",
-    "DuckDuckGo": "?q=",
-    "Yahoo": "search?p=",
-    "Brave": "search?q=",
-    "Ecosia": "search?q=",
-  }).forEach(([engine, query]) => {
+  Object.entries(searchTexts).forEach(([engine, query]) => {
     urls[engine] = query + encodedHash;
   });
   const search = document.getElementById("search");
