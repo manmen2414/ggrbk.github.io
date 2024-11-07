@@ -52,7 +52,7 @@ const addEngine = () => {
     const name = getInputValue("addengine_name");
     const url = getInputValue("addengine_url");
     const searchurl = getInputValue("addengine_searchurl");
-    document.cookie = `${name}=${encodeURIComponent(JSON.stringify([url, searchurl]))}; SameSite=None`;
+    document.cookie = `${name}=${encodeURIComponent(JSON.stringify([url, searchurl]))}; SameSite=Lax`;
     const button = document.querySelector("#addengine_add");
     button.textContent = "Added!"
     location.reload();
