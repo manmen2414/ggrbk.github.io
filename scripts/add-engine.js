@@ -2,13 +2,23 @@
 const encodeHTMLChars = (text) => text.replace(/&/g, "&amp;").replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
 const getInputValue = (id) => document.getElementById(id).value;
+const jsonParseable = (str) => {
+    try {
+        JSON.parse(str)
+        return true;
+    } catch (ex) {
+        return false;
+    }
+}
 const getCookie = () => {
     const keyValuePairs = document.cookie.split("; ");
     const associativeArray = {};
     keyValuePairs.forEach(pair => {
         const keyAndValue = pair.split("=");
-        if(!!keyAndValue[0])
-        associativeArray[keyAndValue[0]] = JSON.parse(decodeURIComponent(keyAndValue[1]));
+        const decodedValue = decodeURIComponent(keyAndValue[1]);
+        if (!!keyAndValue[0] && jsonParseable(decodedValue)) {
+            associativeArray[keyAndValue[0]] = JSON.parse(decodedValue);
+        }
     });
     return associativeArray;
 }
@@ -42,7 +52,7 @@ const addEngine = () => {
     const name = getInputValue("addengine_name");
     const url = getInputValue("addengine_url");
     const searchurl = getInputValue("addengine_searchurl");
-    document.cookie = `${name}=${encodeURIComponent(JSON.stringify([url, searchurl]))}`;
+    document.cookie = `${name}=${encodeURIComponent(JSON.stringify([url, searchurl]))}; SameSite=None`;
     const button = document.querySelector("#addengine_add");
     button.textContent = "Added!"
     location.reload();
