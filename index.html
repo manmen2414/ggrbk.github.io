@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +8,41 @@
 	<meta property="og:description" content="自分で調べることはとても重要です。人に聞く前に一度検索してみやがれください。">
 	<title>GooglingGo!Japan</title>
 	<style>
-		body { font-size: 18px; }
-		@media screen and (min-width: 481px) { body { font-size: 20px; } }
-		@media screen and (min-width: 769px) { body { font-size: 24px; } }
-		h1 { font-size: 2em; }
-		button, input,.small { font-size: 0.75em; }
-		a:link, a:visited { color: #0000ff; }
+		body {
+			font-size: 18px;
+		}
+
+		@media screen and (min-width: 481px) {
+			body {
+				font-size: 20px;
+			}
+		}
+
+		@media screen and (min-width: 769px) {
+			body {
+				font-size: 24px;
+			}
+		}
+
+		h1 {
+			font-size: 2em;
+		}
+
+		button,
+		input,
+		.small {
+			font-size: 0.75em;
+		}
+
+		a:link,
+		a:visited {
+			color: #0000ff;
+		}
 	</style>
 	<script src="/scripts/ggr.js" defer></script>
 	<script src="/scripts/add-engine.js" defer></script>
 </head>
+
 <body onload="LoadCookie()">
 	<h1>GooglingGo! Japan</h1>
 	<h2 id="search" style="display: none;">🔍 </h2>
@@ -32,19 +58,21 @@
 	<p>
 		<button id="addengine" onclick="showAddEngineForm()">検索エンジンを追加</button>
 		<button onclick="alert(JSON.stringify(getCookie()))">Cookieを確認</button>
-		<div id="addengine_form" style="display: none;">
-			<input id="addengine_name" placeholder="検索エンジン名" autocomplete="off">
-			<input id="addengine_url" onchange="showAddEngineFormURL()" placeholder="検索エンジンのURL" autocomplete="off">
-			<input id="addengine_searchurl" onchange="showAddEngineFormURL()" placeholder="検索時に挟むテキスト" autocomplete="off">
-			<div id="addengine_show"></div>
-			<button id="addengine_add" onclick="addEngine()" disabled>Add</button>
-		</div>
+	<div id="addengine_form" style="display: none;">
+		<input id="addengine_name" placeholder="検索エンジン名" autocomplete="off">
+		<input id="addengine_url" onchange="showAddEngineFormURL()" placeholder="検索エンジンのURL" autocomplete="off">
+		<input id="addengine_searchurl" onchange="showAddEngineFormURL()" placeholder="検索時に挟むテキスト" autocomplete="off">
+		<div id="addengine_show"></div>
+		<button id="addengine_add" onclick="addEngine()" disabled>Add</button>
+	</div>
 	</p>
 	<p>
 		<button onclick="alert('ググれカス')">GGRKSとは</button>
 		<button onclick="alert('ググれボケ(またはバカ)')">GGRBKとは</button>
 		<a href="family.html" class="small">GGRBK Family</a>
 	</p>
-	<p id="tips" style="display: none;">ヒント: URLの「#」以降にワードを指定することで、各リンクから直接検索するようになります。<a href="#ggrks+とは" target="_blank">例</a></p>
+	<p id="tips" style="display: none;">ヒント: URLの「#」以降にワードを指定することで、各リンクから直接検索するようになります。<a href="#ggrks+とは"
+			target="_blank">例</a></p>
 </body>
+
 </html>
