@@ -38,9 +38,10 @@ const familyTemplate = `\
   <title>GGRBK Family</title>
   <link rel="stylesheet" href="/styles/style.css">
   <script src="/scripts/add-button.js" defer></script>
+	<script src="/scripts/utils.js"></script>
 </head>
 <body>
-  <h1>GGRBK Family</h1>
+  <h1 onclick="moveToHome()">GGRBK Family</h1>
   <p>
     <ul>
       LIST_ITEMS_PLACEHOLDER

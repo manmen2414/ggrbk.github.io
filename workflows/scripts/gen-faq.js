@@ -22,9 +22,10 @@ let listHtml = `\
   <title>GGRBK FAQ</title>
   <link rel="stylesheet" href="/styles/style.css">
   <script src="/scripts/add-button.js" defer></script>
+	<script src="/scripts/utils.js"></script>
 </head>
 <body>
-  <h1>GGRBK FAQ List</h1>
+  <h1 onclick="moveToHome()">GGRBK FAQ List</h1>
 
   <p>
     <ul>
