@@ -1,0 +1,48 @@
+.right_header {
+    position: fixed;
+    right: 30px;
+}
+
+body {
+    font-size: 18px;
+    transition: all 0.5s 0s ease;
+}
+
+@media screen and (min-width: 481px) {
+    body {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    body {
+        font-size: 24px;
+    }
+}
+
+h1 {
+    font-size: 2em;
+}
+
+button,
+input,
+.small {
+    font-size: 0.75em;
+    transition: all 0.5s 0s ease;
+}
+
+a:link,
+a:visited {
+    color: #0000ff;
+}
+
+.clickable{
+    cursor: pointer;
+}
+
+.transparent{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}

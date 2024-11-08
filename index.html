@@ -7,44 +7,18 @@
 	<meta property="og:type" content="website">
 	<meta property="og:description" content="自分で調べることはとても重要です。人に聞く前に一度検索してみやがれください。">
 	<title>GooglingGo!Japan</title>
-	<style>
-		body {
-			font-size: 18px;
-		}
-
-		@media screen and (min-width: 481px) {
-			body {
-				font-size: 20px;
-			}
-		}
-
-		@media screen and (min-width: 769px) {
-			body {
-				font-size: 24px;
-			}
-		}
-
-		h1 {
-			font-size: 2em;
-		}
-
-		button,
-		input,
-		.small {
-			font-size: 0.75em;
-		}
-
-		a:link,
-		a:visited {
-			color: #0000ff;
-		}
-	</style>
+	<link type="text/css" rel="stylesheet" href="/styles/homepage.css">
 	<script src="/scripts/ggr.js" defer></script>
 	<script src="/scripts/add-engine.js" defer></script>
-	<script src="/scripts/utils.js"></script>
+	<script src="/scripts/utils.js" defer></script>
 </head>
 
-<body onload="LoadCookie();">
+<body onload="LoadCookie();changeColor();">
+	<div class="right_header">
+		<a href="https://github.com/manmen2414/ggrbk.github.io">
+			<img src="/assets/github-mark.svg" id="github" style="width: 50px;height: 50px;"></a>
+		<button class="transparent clickable" id="theme_changer" onclick="changeColor()" style="font-size: 40px;">🌙</button>
+	</div>
 	<h1 onclick="moveToHome()">GooglingGo! Japan</h1>
 	<h2>
 		<form id="search">
