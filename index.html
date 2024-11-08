@@ -13,20 +13,20 @@
 	<script src="/scripts/utils.js" defer></script>
 </head>
 
-<body onload="LoadCookie();changeColor();">
+<body onload="LoadCookie();changeColor(false);">
 	<div class="right_header">
-		<a href="https://github.com/manmen2414/ggrbk.github.io">
+		<a href="https://github.com/manmen2414/ggrbk.github.io" target="_blank">
 			<img src="/assets/github-mark.svg" id="github" style="width: 50px;height: 50px;"></a>
-		<button class="transparent clickable" id="theme_changer" onclick="changeColor()" style="font-size: 40px;">🌙</button>
+		<button class="transparent" id="theme_changer" onclick="changeColor(true)" style="font-size: 40px;">🌙</button>
 	</div>
-	<h1 onclick="moveToHome()">GooglingGo! Japan</h1>
+	<h1 onclick="moveToHome()" class="clickable">GooglingGo! Japan</h1>
 	<h2>
 		<form id="search">
 			<input name="input" style="width: 15em;" autocomplete="on" onsubmit="search()">
 			<button type="submit">🔍</button>
 		</form>
 	</h2>
-	<p>お好みの検索エンジンを選んでください</p>
+	<p>お好みの検索エンジンを選んでください &emsp; <button onclick="changeOpenMode()" id="open_mode">モード：新規タブで開く</button></p>
 	<ul id="engines">
 		<li><a href="https://www.google.com/" target="_blank">Google</a></li>
 		<li><a href="https://www.bing.com/" target="_blank">Bing</a></li>
