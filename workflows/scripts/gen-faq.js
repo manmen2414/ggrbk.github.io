@@ -25,7 +25,7 @@ let listHtml = `\
 	<script src="/scripts/utils.js"></script>
 </head>
 <body>
-  <h1 onclick="moveToHome()">GGRBK FAQ List</h1>
+  <h1 onclick="moveToHome()" class="clickable">GGRBK FAQ List</h1>
 
   <p>
     <ul>

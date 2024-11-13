@@ -1,13 +1,44 @@
-body { font-size: 18px; }
-@media screen and (min-width: 481px) { body { font-size: 20px; } }
-@media screen and (min-width: 769px) { body { font-size: 24px; } }
-h1 { font-size: 2em; }
+body {
+  font-size: 18px;
+}
 
-button, .small { font-size: 0.75em; }
-a:link, a:visited { color: #0000ff; }
+@media screen and (min-width: 481px) {
+  body {
+    font-size: 20px;
+  }
+}
 
-a + button { margin-left: 0.5em; }
+@media screen and (min-width: 769px) {
+  body {
+    font-size: 24px;
+  }
+}
+
+h1 {
+  font-size: 2em;
+}
+
+button,
+.small {
+  font-size: 0.75em;
+}
+
+a:link,
+a:visited {
+  color: #0000ff;
+}
+
+a+button {
+  margin-left: 0.5em;
+}
+
 code {
   background-color: rgb(238, 238, 238);
   border-radius: 0.2em;
+}
+
+
+button,
+.clickable {
+  cursor: pointer;
 }
