@@ -52,5 +52,6 @@ jobs:
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         test -z "$(git status --porcelain)" && exit 0
-        git commit -ma 'Generate Family and FAQ HTML'
+        git add all
+        git commit -m 'Generate Family and FAQ HTML'
         git push
