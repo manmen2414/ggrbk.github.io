@@ -50,3 +50,6 @@ const changeOpenMode = () => {
     })
     document.querySelector("#open_mode").innerHTML = doOpenNewTab ? "モード：新規タブで開く" : "モード：そのまま開く"
 }
+const showRandomHint = () => {
+
+};
